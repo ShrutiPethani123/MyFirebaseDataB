@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "345471991253",
+    "project_id": "myfirebasedatab",
+    "storage_bucket": "myfirebasedatab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345471991253:android:793492d888dd7fb4dfd15c",
+        "android_client_info": {
+          "package_name": "com.myfirebasedatab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345471991253-eshp5c7l7jau3c32boruftp5b3aaiaps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkiIwVqdv2svDAPwflS-5PgfRUAIC7JJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345471991253-eshp5c7l7jau3c32boruftp5b3aaiaps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
