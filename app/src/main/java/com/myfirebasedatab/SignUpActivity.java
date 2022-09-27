@@ -23,10 +23,16 @@ public class SignUpActivity extends AppCompatActivity {
     EditText edtFn,edtLn,edtemail,edtpass;
 
     FirebaseAuth firebaseAuth;
+    FirebaseDatabase firebaseDatabase ;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        firebaseDatabase = FirebaseDatabase.getInstance("https://myfirebasedatab-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        databaseReference = firebaseDatabase.getReference("User");
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         btnsignup=findViewById(R.id.btn_signup);
@@ -45,6 +51,9 @@ public class SignUpActivity extends AppCompatActivity {
                 String strEmail=edtemail.getText().toString();
                 String strPass = edtpass.getText().toString();
 
+                edtFn.setText(" ");
+                edtLn.setText(" ");
+
                 firebaseAuth.createUserWithEmailAndPassword(strEmail,strPass).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -52,6 +61,16 @@ public class SignUpActivity extends AppCompatActivity {
                         if(task.isSuccessful())
                         {
                             String uid=firebaseAuth.getUid();
+
+                            Bean b = new Bean();
+                            b.setFirstName(fn);
+                            b.setLastName(ln);
+                            b.setEmail(strEmail);
+                            b.setPassword(strPass);
+
+                            b.setId(uid);
+
+                            databaseReference.child(uid).setValue(b);
                             Intent i = new Intent(SignUpActivity.this,LoginActivity.class);
                             startActivity(i);
                         }

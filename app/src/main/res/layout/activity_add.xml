@@ -7,6 +7,15 @@
     tools:context=".AddActivity"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_username"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"/>
+
     <EditText
 
         android:layout_width="match_parent"

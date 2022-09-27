@@ -39,8 +39,6 @@ public class DisplayActivity extends AppCompatActivity {
             for(DataSnapshot dataSnapshot : snapshot.getChildren() ){
                 Bean bean = dataSnapshot.getValue(Bean.class);
                 beanrraylist.add(bean);
-
-
             }
             MyBaseAdapter myBaseAdapter = new MyBaseAdapter(DisplayActivity.this,beanrraylist);
             listView.setAdapter(myBaseAdapter);
